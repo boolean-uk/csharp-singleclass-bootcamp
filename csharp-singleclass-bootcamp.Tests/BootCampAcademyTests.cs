@@ -64,5 +64,42 @@ namespace csharp_singleclass_bootcamp.Tests
             Assert.IsTrue(academy.LearningPlanIsFull);
         }
 
+        [Test]
+        public void ChangeLearningPlanCapacityTest()
+        {
+            // As a manager at the Academy, I'd like to be able to change the capacity of Learning Plans.
+
+            // arrange
+            BootCampAcademy academy = new BootCampAcademy();
+            int newCapacity = 6;
+
+
+            // act
+            academy.ChangeLearningPlanCapacity(newCapacity);
+
+
+            //assert
+            Assert.AreEqual(academy.LearningPlanMax, newCapacity);
+
+        }
+
+        [Test]
+        public void RemoveNotExistingCourseTest()
+        {
+            // As a student of the Academy, I'd like to know that if I try to remove an item that doesn't exist in my Learning Plan.
+
+
+            // arrange
+            BootCampAcademy academy = new BootCampAcademy();
+            
+
+            // act
+            bool result = academy.RemoveFromLearningPlan("sewing for beginners");
+
+            // assert
+            Assert.IsFalse(result);
+
+        }
+
     }
 }
