@@ -39,6 +39,30 @@ namespace csharp_singleclass_bootcamp.Tests
 
         }
 
+        [Test]
+        public void FullLearningPlanTest()
+        {
+            //3. As a student of the Academy I'd like to know when my Learning plan is full, when I try to add another item (Course, Tutorial, Certification) to it.
+            //arrange
+            BootCampAcademy academy = new BootCampAcademy();            
+            
+            string course1 = "C#";
+            string course2 = "Java";
+            string course3 = "Python";            
+            string course4 = "C++";
+
+            //act
+            
+            academy.AddToLearningPlan(course1);
+            academy.AddToLearningPlan(course2);
+            academy.AddToLearningPlan(course3);
+            academy.AddToLearningPlan(course4);
+
+            
+            //assert
+            Assert.AreEqual(academy.LearningPlans.Count, academy.LearningPlanMax);
+            Assert.IsTrue(academy.LearningPlanIsFull);
+        }
 
     }
 }

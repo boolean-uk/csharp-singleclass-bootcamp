@@ -24,7 +24,10 @@ Bootcamp Academy
 
         public void AddToLearningPlan(string course)
         {
-            this.LearningPlans.Add(course);
+            if(this.LearningPlans.Count < this.LearningPlanMax)
+            {
+                this.LearningPlans.Add(course);
+            }
         }
 
         public bool RemoveFromLearningPlan(string course)
@@ -33,6 +36,13 @@ Bootcamp Academy
         }
 
         public List<string> LearningPlans { get; set; } = new List<string>();
-
+        public int LearningPlanMax { get; set; } = 3;
+        public bool LearningPlanIsFull 
+        {
+            get 
+            {
+                return this.LearningPlanMax >= this.LearningPlans.Count ? true : false;               
+            }         
+        }
     }
 }
