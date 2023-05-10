@@ -32,7 +32,16 @@ Bootcamp Academy
 
         public bool RemoveFromLearningPlan(string course)
         {
-            return this.LearningPlans.Remove(course);
+            if(this.LearningPlans.Contains(course))
+            {
+                return this.LearningPlans.Remove(course);
+            }
+            return false;
+        }
+
+        public void ChangeLearningPlanCapacity(int newCapacity)
+        {
+            this.LearningPlanMax = newCapacity;
         }
 
         public List<string> LearningPlans { get; set; } = new List<string>();
