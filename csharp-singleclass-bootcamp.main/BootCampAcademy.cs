@@ -24,11 +24,15 @@ Bootcamp Academy
 
         public void AddToLearningPlan(string course)
         {
-            throw new NotImplementedException();
+            this.LearningPlans.Add(course);
         }
-        
-        
-        public List<string> LearningPlans { get; set; }
+
+        public bool RemoveFromLearningPlan(string course)
+        {
+            return this.LearningPlans.Remove(course);
+        }
+
+        public List<string> LearningPlans { get; set; } = new List<string>();
 
     }
 }
