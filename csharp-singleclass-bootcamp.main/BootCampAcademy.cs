@@ -21,7 +21,6 @@ Bootcamp Academy
      */
     public class BootCampAcademy
     {
-
         public void AddToLearningPlan(string course)
         {
             if(this.LearningPlans.Count < this.LearningPlanMax)
@@ -32,7 +31,11 @@ Bootcamp Academy
 
         public bool RemoveFromLearningPlan(string course)
         {
-            return this.LearningPlans.Remove(course);
+            if (this.LearningPlans.Contains(course))
+            {
+                return this.LearningPlans.Remove(course);
+            }
+            return false;
         }
 
         public List<string> LearningPlans { get; set; } = new List<string>();
@@ -43,6 +46,14 @@ Bootcamp Academy
             {
                 return this.LearningPlanMax >= this.LearningPlans.Count ? true : false;               
             }         
+        }
+
+        public void ChangeCapacityLearningPlan(int max)
+        {
+            // if (user == manager) {
+            LearningPlanMax = max;
+
+            this.LearningPlans.RemoveRange(max, LearningPlans.Count - max);
         }
     }
 }
