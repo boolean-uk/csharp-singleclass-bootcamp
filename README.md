@@ -11,20 +11,23 @@
 5. As a student of the Academy, I'd like to know that if I try to remove an item that doesn't exist in my Learning Plan.
 
 
-#Domain Models In Here   
+## Domain Models In Here   
 
 ```
+
 1. As a student of the Academy I want to be able to add a specific course to my Learning Plan.
+
 ```
+
 | Classes         | Methods                                            | Scenario                        | Outputs          |
 |-----------------|----------------------------------------------------|---------------------------------|------------------|
 |`BootCampAcademy`| `Add(string course)`                               | add course to List<strig> member| bool             |
 
 
-
-
 2. As a student of the Academy if I change my mind I want to be able to remove a course from my Learning Plan.
+
 ```
+
 | Classes         | Methods                                            | Scenario                        | Outputs          |
 |-----------------|----------------------------------------------------|---------------------------------|------------------|
 |`BootCampAcademy`| `Remove(int id)`                                   | If product is in list, add cost | bool             |
